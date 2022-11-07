@@ -9,3 +9,6 @@ Technologies Stack:
  - JWT
  - Postgresql
  - Docker
+
+ER Diagram
+![all text](https://imgur.com/YEerdI4)
