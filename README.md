@@ -10,5 +10,7 @@ Technologies Stack:
  - Postgresql
  - Docker
 
+
 ER Diagram
+
 ![ER Diagram](https://i.imgur.com/YEerdI4.jpg)
