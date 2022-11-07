@@ -11,4 +11,4 @@ Technologies Stack:
  - Docker
 
 ER Diagram
-![all text](https://imgur.com/YEerdI4)
+![ER Diagram](https://i.imgur.com/YEerdI4.jpg)
