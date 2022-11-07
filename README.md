@@ -13,4 +13,4 @@ Technologies Stack:
 
 ER Diagram
 
-![ER Diagram](https://i.imgur.com/YEerdI4.jpg)
+![ER Diagram](https://i.imgur.com/wJy3wMN.png)
