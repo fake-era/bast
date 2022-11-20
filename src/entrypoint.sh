@@ -1,8 +1,7 @@
 #!/bin/bash
 
 case "$PROCESS" in
-"DEV_DJANGO")   
-    wait_for "${POSTGRES_HOST}" "${POSTGRES_PORT}"
+"DEV_DJANGO")
     python manage.py collectstatic --noinput &&
     python manage.py makemigrations &&
     python manage.py migrate &&
