@@ -1,0 +1,29 @@
+version: '3.9'
+
+services:
+  postgres:
+    container_name: bast_postgres
+    image: postgres:13-alpine
+    env_file:
+      - .envs/.local/.postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - ./data:/var/lib/postgresql/data
+
+  django:
+    container_name: bast_django
+    build:
+      context: ./
+      dockerfile: Dockerfiles/Dockerfile
+    volumes:
+      - ./src:/src:rw
+    env_file:
+      - .envs/.local/.django
+      - .envs/.local/.postgres
+    environment:
+      - PROCESS="DEV_DJANGO"
+    ports:
+      - 8000:8000
+    depends_on:
+      - postgres
