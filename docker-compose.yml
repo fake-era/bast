@@ -4,12 +4,19 @@ services:
   postgres:
     container_name: bast_postgres
     image: postgres:13-alpine
-    env_file:
-      - .envs/.local/.postgres
+    environment:
+      POSTGRES_DB: bast
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
     ports:
       - 5432:5432
     volumes:
       - ./data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   django:
     container_name: bast_django
@@ -26,4 +33,5 @@ services:
     ports:
       - 8000:8000
     depends_on:
-      - postgres
+      postgres:
+        condition: service_healthy
